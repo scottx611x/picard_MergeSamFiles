@@ -1,0 +1,15 @@
+name: picard
+owner: refinery-platform
+description: An updated fork of https://github.com/nekrut/picard to allow some tools to be compatible with nested collections.
+homepage_url: https://github.com/scottx611x/picard
+long_description: |
+    An updated fork of https://github.com/nekrut/picard to allow some tools to be compatible with nested collections.
+remote_repository_url: https://github.com/scottx611x/picard
+type: unrestricted 
+categories:
+    - Convert Formats 
+exclude:
+    - README.md
+    - .travis.yml
+    - LICENSE
+    - requirements.txt
