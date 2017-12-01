@@ -1,0 +1,15 @@
+sudo: required
+cache: pip
+language: python
+
+install:
+    - pip install -r requirements.txt
+script:
+    - planemo test
+# after_success:
+#     - planemo shed_update --check_diff --shed_target toolshed --shed_email $SHED_EMAIL --shed_password $SHED_PASSWORD
+# notifications:
+#     email:
+#         recipients:
+#             - $SHED_EMAIL
+#     on_success: never
