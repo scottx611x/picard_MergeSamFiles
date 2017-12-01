@@ -1,13 +1,9 @@
 <tool name="MergeSamFiles" id="picard_MergeSamFiles" version="1.126.0">
   <description>merges multiple SAM/BAM datasets into one</description>
-  <requirements>
-    <requirement type="package" version="1.126.0">picard</requirement>
-  </requirements>
-  
   <macros>
     <import>picard_macros.xml</import>
   </macros>
-  
+  <expand macro="requirements" />
   <command>
     @java_options@
     
@@ -53,13 +49,13 @@
   <tests>
     <test>
       <param name="inputList" ftype="bam">
-        <collection type="list">
+        <collection name="list 1" type="list">
           <collection type="list">
             <element name="l1_input1" value="picard_MergeSamFiles_input1.bam" />
             <element name="l1_input2" value="picard_MergeSamFiles_input2.bam" />
             <element name="l1_input3" value="picard_MergeSamFiles_input3.bam" />
           </collection>
-          <collection type="list">
+          <collection name = "list 1" type="list">
             <element name="l2_input1" value="picard_MergeSamFiles_input1.bam" />
             <element name="l2_input2" value="picard_MergeSamFiles_input2.bam" />
             <element name="l2_input3" value="picard_MergeSamFiles_input3.bam" />
