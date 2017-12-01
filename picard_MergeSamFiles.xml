@@ -5,12 +5,17 @@
   </macros>
   <expand macro="requirements" />
   <command detect_errors="exit_code"><![CDATA[
-    #for $nestedList in $inputList:
+    echo "TEST"
+    echo $inputList
+    echo $inputList.keys()
+
+    #for $key in $inputList.keys():
       @java_options@
       picard
       MergeSamFiles
 
-      #for $element in $nestedList:
+      #for $element in $inputList[$key]:
+        echo $element
         INPUT="${element}"
       #end for
 
@@ -44,7 +49,9 @@
   </inputs>
 
   <outputs>
-    <data format="bam" name="outFile" label="${tool.name} on ${on_string}: Merged BAM dataset"/>
+    <data format="bam" name="outFile" label="${tool.name} on ${on_string}: Merged BAM dataset">
+      <discover_datasets pattern="(?PoutFile.+" ext="bam" visible="true"/>
+    </data>
   </outputs>
 
   <tests>
