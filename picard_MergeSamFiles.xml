@@ -1,4 +1,4 @@
-<tool name="MergeSamFiles" id="picard_MergeSamFiles" version="1.126.0">
+<tool name="MergeSamFiles" id="picard_MergeSamFiles" version="@TOOL_VERSION@.0">
   <description>merges multiple SAM/BAM datasets into one</description>
   <macros>
     <import>picard_macros.xml</import>
@@ -34,17 +34,17 @@
     <param name="assume_sorted" type="boolean" label="Assume the input file is already sorted" help="ASSUME_SORTED; default=False"/>
 
     <repeat name="comments" title="Comment" min="0" help="You can provide multiple comments">
-      <param name="comment" type="text" size="50" label="Add this comment to BAM dataset" help="COMMENT"/>
+      <param name="comment" type="text" label="Add this comment to BAM dataset" help="COMMENT"/>
     </repeat>
-    
+
     <expand macro="VS" />
-    
-  </inputs> 
-  
+
+  </inputs>
+
   <outputs>
     <data format="bam" name="outFile" label="${tool.name} on ${on_string}: Merged BAM dataset"/>
   </outputs>
-  
+
   <tests>
     <test>
       <param name="inputList" ftype="bam">
@@ -64,8 +64,8 @@
       <param name="assume_sorted" value="False"/>
       <param name="merge_sequence_dictionaries" value="False"/>
       <param name="validation_stringency" value="LENIENT"/>
-      <output name="outFile" file="picard_MergeSamFiles_test1.bam" ftype="bam" lines_diff="2"/>
-      <output name="outFile" file="picard_MergeSamFiles_test1.bam" ftype="bam" lines_diff="2"/>
+      <output name="outFile" file="picard_MergeSamFiles_test1.bam" ftype="bam" lines_diff="4"/>
+      <output name="outFile" file="picard_MergeSamFiles_test1.bam" ftype="bam" lines_diff="4"/>
     </test>
   </tests>
   
@@ -84,22 +84,20 @@ Merges multiple SAM/BAM datasets into one.
 @description@
 
   ASSUME_SORTED=Boolean
-  AS=Boolean                    If true, assume that the input files are in the same sort order as the requested output 
-                                sort order, even if their headers say otherwise.  Default value: false. This option can 
-                                be set to 'null' to clear the default value. Possible values: {true, false} 
-  
+  AS=Boolean                    If true, assume that the input files are in the same sort order as the requested output
+                                sort order, even if their headers say otherwise.  Default value: false. This option can
+                                be set to 'null' to clear the default value. Possible values: {true, false}
+
   MERGE_SEQUENCE_DICTIONARIES=Boolean
-  MSD=Boolean                   Merge the sequence dictionaries  Default value: false. This option can be set to 'null' 
-                                to clear the default value. Possible values: {true, false} 
-  
+  MSD=Boolean                   Merge the sequence dictionaries  Default value: false. This option can be set to 'null'
+                                to clear the default value. Possible values: {true, false}
+
   COMMENT=String
-  CO=String                     Comment(s) to include in the merged output file's header.  This option may be specified 0 
-                                or more times. 
+  CO=String                     Comment(s) to include in the merged output file's header.  This option may be specified 0
+                                or more times.
 
 
 @more_info@
 
   </help>
 </tool>
-
-
