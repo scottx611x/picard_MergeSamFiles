@@ -1,0 +1,17 @@
+name: picard_MergeSamFiles
+owner: refinery-platform
+description: Merge N Lists of Bam files into N output bams
+homepage_url: https://github.com/scottx611x/picard_MergeSamFiles
+long_description: |
+    Merge N Lists of Bam files into N output bams
+    Input: Dataset collection of type: <list:list>
+    Outputs: N merged Bam files for the N inner lists
+remote_repository_url: https://github.com/scottx611x/picard_MergeSamFiles
+type: unrestricted 
+categories:
+    - Next Gen Mappers
+exclude:
+    - README.md
+    - .travis.yml
+    - LICENSE
+    - requirements.txt
