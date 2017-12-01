@@ -6,16 +6,19 @@
   <expand macro="requirements" />
   <command detect_errors="exit_code"><![CDATA[
     echo "TEST"
-    echo $inputList.elements
+    echo $inputList
 
-    #for $listCollection in $inputList.elements:
+    #for $listCollection in $inputList:
       @java_options@
       picard
       MergeSamFiles
 
-      #for $bamFile in $listCollection.elements:
-        echo $bamFile
-        INPUT="${bamFile}"
+      echo $listCollection
+      echo $listCollection.elements
+
+      #for $element in $listCollection.elements:
+        echo $element
+        INPUT="${element}"
       #end for
 
       OUTPUT="${outFile}"
