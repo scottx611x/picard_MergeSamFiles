@@ -24,7 +24,7 @@
 
     <token name="@java_options@"><![CDATA[
     _JAVA_OPTIONS=\${_JAVA_OPTIONS:-'-Xmx2048m -Xms256m'} &&
-    export _JAVA_OPTIONS &&
+    export _JAVA_OPTIONS
     ]]></token>
 
     <token name="@more_info@">
