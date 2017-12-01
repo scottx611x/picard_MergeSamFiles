@@ -6,17 +6,16 @@
   <expand macro="requirements" />
   <command detect_errors="exit_code"><![CDATA[
     echo "TEST"
-    echo $inputList
-    echo $inputList.keys()
+    echo $inputList.elements
 
-    #for $key in $inputList.keys():
+    #for $listCollection in $inputList.elements:
       @java_options@
       picard
       MergeSamFiles
 
-      #for $element in $inputList[$key]:
-        echo $element
-        INPUT="${element}"
+      #for $bamFile in $listCollection.elements:
+        echo $bamFile
+        INPUT="${bamFile}"
       #end for
 
       OUTPUT="${outFile}"
@@ -50,7 +49,7 @@
 
   <outputs>
     <data format="bam" name="outFile" label="${tool.name} on ${on_string}: Merged BAM dataset">
-      <discover_datasets pattern="(?PoutFile.+" ext="bam" visible="true"/>
+      <discover_datasets ext="bam" visible="true"/>
     </data>
   </outputs>
 
