@@ -5,19 +5,12 @@
   </macros>
   <expand macro="requirements" />
   <command detect_errors="exit_code"><![CDATA[
-    echo "TEST"
-    echo $inputList
-
     #for $listCollection in $inputList:
       @java_options@
       picard
       MergeSamFiles
 
-      echo $listCollection
-      echo $listCollection.elements
-
-      #for $element in $listCollection.elements:
-        echo $element
+      #for $element in $listCollection:
         INPUT="${element}"
       #end for
 
