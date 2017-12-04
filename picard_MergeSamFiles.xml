@@ -52,14 +52,14 @@
       <param name="inputList">
         <collection type="list:list">
           <element name="list 1">
-            <collection name="list 2" type="list">
+            <collection type="list">
               <element name="l1_input1" value="picard_MergeSamFiles_input1.bam" />
               <element name="l1_input2" value="picard_MergeSamFiles_input2.bam" />
               <element name="l1_input3" value="picard_MergeSamFiles_input3.bam" />
             </collection>
           </element>
           <element name="list 2">
-            <collection name="list 2" type="list">
+          <collection type="list">
               <element name="l2_input1" value="picard_MergeSamFiles_input1.bam" />
               <element name="l2_input2" value="picard_MergeSamFiles_input2.bam" />
               <element name="l2_input3" value="picard_MergeSamFiles_input3.bam" />
@@ -70,8 +70,16 @@
       <param name="assume_sorted" value="False"/>
       <param name="merge_sequence_dictionaries" value="False"/>
       <param name="validation_stringency" value="LENIENT"/>
-      <discovered_dataset file="merged0.bam" />
-      <discovered_dataset file="merged1.bam" />
+      <output name="merged0" ftype="bam">
+        <assert_contents>
+          <has_text text=""/>
+        </assert_contents>
+      </output>
+      <output name="merged1" ftype="bam">
+        <assert_contents>
+          <has_text text=""/>
+        </assert_contents>
+      </output>
     </test>
   </tests>
   

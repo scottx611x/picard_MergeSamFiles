@@ -91,7 +91,7 @@ Note the hierarchical relationship between read groups (unique for each lane) to
 
 **Dataset collections - processing large numbers of datasets at once**
 
-This will be added shortly
+This tool accepts nested lists of .bam files to be merged. This type of structure is modeled in Galaxy as a `list:list` Dataset Collection.
 
 
     </token>
