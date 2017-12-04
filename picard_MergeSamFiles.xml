@@ -6,7 +6,7 @@
   <expand macro="requirements" />
   <command detect_errors="exit_code"><![CDATA[
     @java_options@
-    #for $listCollection in $inputList:
+    #for $index, $listCollection in enumerate($inputList):
       && 
       picard
       MergeSamFiles
@@ -15,7 +15,7 @@
         INPUT="${element}"
       #end for
 
-      OUTPUT="${listCollection.name}_merged_.bam"
+      OUTPUT="${'merged{}.bam'.format($index)}"
       MERGE_SEQUENCE_DICTIONARIES="${merge_sequence_dictionaries}"
       ASSUME_SORTED="${assume_sorted}"
       #for $element in $comments:
@@ -42,8 +42,8 @@
   </inputs>
 
   <outputs>
-    <data format="bam" label="${tool.name} on ${on_string}: Merged BAM dataset">
-      <discover_datasets ext="bam" visible="true"/>
+    <data format="bam" name="merged">
+        <discover_datasets pattern="__designation_and_ext__" visible="true" />
     </data>
   </outputs>
 
@@ -70,9 +70,15 @@
       <param name="assume_sorted" value="False"/>
       <param name="merge_sequence_dictionaries" value="False"/>
       <param name="validation_stringency" value="LENIENT"/>
-      <output name="merged">
-        <discovered_dataset designation="merged0" file="merged0.bam" />
-        <discovered_dataset designation="merged1" file="merged1.bam" />
+      <output name="merged0" ftype="bam">
+        <assert_contents>
+          <has_text text=""/>
+        </assert_contents>
+      </output>
+      <output name="merged1" ftype="bam">
+        <assert_contents>
+          <has_text text=""/>
+        </assert_contents>
       </output>
     </test>
   </tests>
