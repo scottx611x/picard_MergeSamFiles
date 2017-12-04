@@ -1,4 +1,4 @@
-name: picard_MergeSamFiles
+name: picard_merge_sam_files
 owner: refinery-platform
 description: Merge N Lists of Bam files into N output bams
 homepage_url: https://github.com/scottx611x/picard_MergeSamFiles
