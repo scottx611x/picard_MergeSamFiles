@@ -1,13 +1,15 @@
-name: picard
+name: picard_MergeSamFiles
 owner: refinery-platform
-description: An updated fork of https://github.com/nekrut/picard to allow some tools to be compatible with nested collections.
-homepage_url: https://github.com/scottx611x/picard
+description: Merge N Lists of Bam files into N output bams
+homepage_url: https://github.com/scottx611x/picard_MergeSamFiles
 long_description: |
-    An updated fork of https://github.com/nekrut/picard to allow some tools to be compatible with nested collections.
-remote_repository_url: https://github.com/scottx611x/picard
+    Merge N Lists of Bam files into N output bams
+    Input: Dataset collection of type: <list:list>
+    Outputs: N merged Bam files for the N inner lists
+remote_repository_url: https://github.com/scottx611x/picard_MergeSamFiles
 type: unrestricted 
 categories:
-    - Convert Formats 
+    - Next Gen Mappers
 exclude:
     - README.md
     - .travis.yml

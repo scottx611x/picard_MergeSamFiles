@@ -1,4 +1,6 @@
-picard [![Build Status](https://travis-ci.org/scottx611x/picard.svg?branch=master)](https://travis-ci.org/scottx611x/picard)
-======
+# picard_MergeSamFiles [![Build Status](https://travis-ci.org/scottx611x/picard_MergeSamFiles.svg?branch=master)](https://travis-ci.org/scottx611x/picard_MergeSamFiles)
+>>>>>>> origin/master
 
-Galaxy wrappers for Picard tools. In this first pass I only included tools relevant to BAM processing and omitted those dedicated to VCF. The current version is based on Picard 1.126. Majority of the tools are designed to work with the new Galaxy dataset collection functionality and can accept collections as inputs. 
+Galaxy Tool Wrapper around the [picard MergeSamFiles](http://broadinstitute.github.io/picard/command-line-overview.html#MergeSamFiles) tool.
+
+Merges a `list:list` Dataset Collection into N `.bam` files based on the N inner `lists` of bams.

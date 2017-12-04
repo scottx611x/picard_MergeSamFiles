@@ -11,3 +11,4 @@ script:
   - planemo test picard_MergeSamFiles.xml
 after_success:
   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then planemo shed_update --check_diff --shed_target testtoolshed --shed_email $SHED_EMAIL --shed_password $SHED_PASSWORD; fi
+

@@ -59,7 +59,7 @@
             </collection>
           </element>
           <element name="list 2">
-            <collection type="list">
+          <collection type="list">
               <element name="l2_input1" value="picard_MergeSamFiles_input1.bam" />
               <element name="l2_input2" value="picard_MergeSamFiles_input2.bam" />
               <element name="l2_input3" value="picard_MergeSamFiles_input3.bam" />
